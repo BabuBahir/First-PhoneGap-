@@ -1,0 +1,10 @@
+ 
+<div ng-hide="myvar" class="col-md-4 center-block">
+	<button ng-click="FBLogin()" style="font-size:25px" class="btn btn-primary fa fa-facebook-square">  Facebook login quiz</button>
+</div>
+
+ <div ng-show="myvar" class="progress">
+    <div ng-init="itimer=8" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:{{itimer}}%">
+      Loading..
+    </div>
+  </div>

@@ -1,0 +1,60 @@
+
+<div ng-hide="isFormOpen"> 
+  <form name="myForm">
+	Enter Name  <input type="text" name="username" ng-model="username" required>  		  
+	<div ng-if="myForm.username.$valid"><br/>
+		<button class="btn btn-success" ng-click="change_formstate()">Start Quiz</button>
+	</div>
+   </form>
+</div>
+
+<div ng-init="isFormOpen = false" ng-show="isFormOpen">
+  <caption class="lead">Welcome {{username}} !!
+	<h6>Score <span class="badge">{{score}}</span></h6>
+  </caption> 
+   
+  <div class="row">
+    <div class="btn pull-right"> 
+  <button ng-init="init()" ng-class="btn_class" ng-click="addProduct()">Next</button>
+  </div>
+  </div>
+  
+<table class="table" >
+
+  <thead>
+    <tr>
+		<th>Question</th>	
+			<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:{{counter+1}}0%">
+			  <span class="sr-only">70% Complete</span>
+			</div>
+			</div>		
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{products[counter].ques}} ?</td>
+    </tr>
+	<tr>
+      <td><input type="radio" ng-model="value"  value="1" ng-change='newValue(value)'>			  	  {{products[counter].opt1}} </input></td>
+    </tr>
+	<tr>
+       <td><input type="radio" ng-model="value" value="2" ng-change='newValue(value)'>			  	 {{products[counter].opt2}} </input></td>	 
+    </tr>
+	<tr>
+       <td><input type="radio" ng-model="value" value="3" ng-change='newValue(value)'>			  	 {{products[counter].opt3}} </input></td> 
+    </tr>
+	<tr>
+	   <td><input type="radio" ng-model="value" value="4" ng-change='newValue(value)'>			  	 {{products[counter].opt4}} </input></td>	 	  
+    </tr>
+  </tbody>
+ 	
+</table>
+ 
+<p>
+  <!-- <a href="#/add" class="btn btn-success" role="button">Add New Product</a> -->
+</p>
+
+</div>
+ 
+

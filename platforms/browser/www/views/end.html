@@ -1,0 +1,13 @@
+  
+<div class="well">Thank you {{getOrig()}} !!! </div>
+
+ <ul class="container" style="list-style: none;">
+  <li ng-repeat="x in result">
+    <div  align="centre" ng-if="x[1]==x[2]">		 
+	    {{x[0]}} ?<span class="glyphicon glyphicon-ok"></span>
+    </div>
+	<div align="centre" ng-if="x[1]!=x[2]">
+		{{x[0]}} ?<span class="glyphicon glyphicon-remove"></span>          
+    </div>
+  </li>
+</ul>
